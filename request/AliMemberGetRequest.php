@@ -1,41 +1,34 @@
 <?php
-class AliMemberGetRequest
-{
-	 private $memberId;
+class AliMemberGetRequest{
+	private $memberId;
 		
-	 private $Fields;
+	private $Fields;
 	 
-	 private $apiParas = array();
+	private $apiParas = array();
 	 
-	 public function getApiParas()
-	 {
+	public function getApiParas(){
 	 	return $this->apiParas;
-	 }
+	}
 	 
-	 public function setMemberId($memberId)
-	 {
+	public function setMemberId($memberId){
 	 	$this->memberId = $memberId;
 	 	$this->apiParas["memberId"] = $memberId;
-	 }
+	}
 	 
-	 public function getMemberId()
-	 {
+	public function getMemberId(){
 	 	return $this->memberId;
-	 }
+	}
 	 
-	 public function setFields($Fields)
-	 {
+	public function setFields($Fields){
 	 	$this->Fields = $Fields;
 	 	$this->apiParas["returnFields"] = $Fields;
-	 }
+	}
 	 
-	 public function getFields()
-	 {
+	public function getFields(){
 	 	$this->Fields;
-	 }
+	}
 	 
-	public function check()
-	{
+	public function check(){
 		RequestCheckUtil::checkNotNull($this->memberId,"memberId");
 	}
 	
@@ -44,7 +37,9 @@ class AliMemberGetRequest
 		$this->$key = $value;
 	}
 	 
-	
+	public function getApiMethodName(){
+		return 'member.get';
+	}
 	
 }
 
